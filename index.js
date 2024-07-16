@@ -6,7 +6,11 @@ import { Router } from "./routes/routes.js";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+      origin: ["https://contact-nest-app.vercel.app/"],
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true
+}));
 
 dotenv.config({path: "./config/.env"});
 
